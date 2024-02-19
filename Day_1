@@ -1,0 +1,42 @@
+The 𝐃𝐞𝐯𝐎𝐩𝐬 is a combination of two words i.e. Dev + Ops, Dev stands for development and Ops stands for Operations.
+To Learn this whole Deployment cycle must learn the following tools:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Linux: It is one of the first step towards the journey of 𝐃𝐞𝐯𝐎𝐩𝐬. Just like Windows, iOS, and Mac OS, Linux is an operating system, It help us to provide security and also a open 
+source kernel so it is free of cost and also light weight. If you are the window friendly user then you can use the virtual box or vmware which help us to provide the virtual environment to host
+your linux machine. 
+For eg: Redhat, Centos, Ubuntu and much more.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Git : It is a 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐜𝐨𝐧𝐭𝐫𝐨𝐥 𝐬𝐲𝐬𝐭𝐞𝐦 which help us to manage our code in a very efficient ways that will help in our industries which are under the IT sector. 𝐆𝐢𝐭 also help us to work 
+simultaneously on a single project.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Github : It is a Hub of all the git repository, repository means that like a folder of our project. All the developers are stored their project repository on the GitHub then they are
+control their version as well as manage that code easily.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Docker : It is tool that is used to create, deploy and run applications in 𝐜𝐨𝐧𝐭𝐚𝐢𝐧𝐞𝐫𝐬, Basically, 𝐃𝐨𝐜𝐤𝐞𝐫 is an open source platform for developing, shipping and running applications. 
+𝐃𝐨𝐜𝐤𝐞𝐫 enables you to separate your application from your infrastructure, so you can deliver the software quickly.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Jenkins : Jenkins is a tool which help us to integrate the code to the real time deployment. They often ask what CD stands for in CI/CD, which can be confusing! CI means Continuous 
+Integration, CD means Continuous Deployment and CD also means Continuous Delivery. For eg: Like if you have a use case i.e. have a git repository on the github and you can connect 
+your jenkins pipeline to the github and the triggers will help us to pull the code from the github when the developer and deploy it on the github.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Kubernetes : Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cloud: You can learn any one cloud first like AWS, GCP, Azure and much more but you can only grab your full command on one cloud first then you can switch the cloud easily according
+to their use case in your industry. I personally recommend you to learn AWS cloud because it will provide you a free tier account for 1 year with minimal services which help us to 
+move ahead in your journey of cloud. After that you can switch any cloud in which you want to move forward.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Terraform: Terraform is a infrastructure as a code tool which help us to manage your infrastructure on a cloud which give you to manage your cloud easily in the today's competitive world.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Automation, Scaling, Infrastructure::::DevOps automation is the process of removing unnecessary or repetitive tasks to streamline workflows within the DevOps lifecycle. 
+Automation is achieved using tools and process adjustments for faster deliveries and higher quality applications.
+
+In short, it’s about DevOps scaling practices with security and quality embedded every step of the way. Implementing DevOps best practices can mean a radical shift from the way an 
+organization currently works. It is important that the entire team buys into this new approach.
+
+DevOps infrastructure or Infrastructure Automation under DevOps refers to a concept that revolves around the idea of managing infrastructure with the help of code. This is done 
+with the help of certain tools or programs which can help to carry out the tasks automatically!
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
