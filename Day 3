@@ -1,0 +1,154 @@
+Day 3 Task: Basic Linux Commands
+Task: What is the linux command to
+To view what's written in a file.
+To change the access permissions of files.
+To check which commands you have run till now.
+To remove a directory/ Folder.
+To create a fruits.txt file and to view the content.
+Add content in devops.txt (One in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava.
+To Show only top three fruits from the file.
+To Show only bottom three fruits from the file.
+To create another file Colors.txt and to view the content.
+Add content in Colors.txt (One in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey.
+To find the difference between fruits.txt and Colors.txt file.
+Answer 1)
+┌──(root㉿kali)-[~]
+└─# cat abcd.txt
+Hello my name is pranav
+ 
+--------------------------
+there are two types we can change permission of files in linux
+1)=> first is by using charter symbols 
+> 'r' for read 'w' for write 'x' for execute
+> there are three types of permission to particular user , group and public 
+> with each having 3 type of permission read,write,execute 
+> we have to give evry individual so it contains 
+ 9 fields 3 for each usertype
+> first 3 for user , seccond 3 fields for group and last 3 
+ fields for public access
+> so we give first initials to specify the type of user 
+> o=public access/others
+> g=group
+> u=user
+> a=all
+ex: 1)we want to give only read permission to user we write cmd as follows and 
+2)if we want to give some permission for all we write
+1)=> #chmod +r filename 
+2)=> #chmod +rwrwrw filename //here we gave only needed permission with combinations of user group and public
+--------------
+Answer 2)
+before::
+-rwxr-xr-x 1 root root 24 Feb 20 10:13 abcd.txt
+so output::
+┌──(root㉿kali)-[~]
+└─# chmod a+rwx abcd.txt 
+op::mode of 'abcd.txt' retained as 0777 (rwxrwxrwx)
+---------------------------------------------------
+now seocnd way is by giving number system for permission
+as follows"
+here are only 3 fields
+first=user/owner
+second=group
+third=public/other access
+number-system is :: 4=read ,2=write ,1=execute
+so its combination of 7
+if we gave 777 it means all permissions granted
+like wise..
+---------------------------
+Answer 3)
+history command is used to get the history of commands
+or to search specific command press ctrl + r multiple times or single time and search for command used
+ 
+┌──(root㉿kali)-[~]
+└─# history 
+ 1 hostname screamy
+ 2 pwd
+ 3 su kali
+ 4 exit
+ 5 touch abcd.txt
+ 6 ls
+ 7 vim abcd.txt
+ 8 cat abcd.txt
+ 9 ls -all 
+ 10 chmod -g +rwx abcd.txt
+ 11 chmod a+rwx abcd.txt
+ 22 chmod -v a+rwx abcd.txt
+ 
+-----------------
+Answer 4)
+to remove directory or folder we use
+rm -r path_ordir_name-------------here -r means recursive as a dir can contain multiple files in it
+rm-rf path ---------used to delete/ remove dir or file without permission
+ 
+::┌──(root㉿kali)-[~]
+└─# rm -vr abcd/bb
+removed directory 'abcd/bb'
+--------------
+aNSER 5)
+┌──(root㉿kali)-[~]
+└─# touch fruits.txt
+ 
+┌──(root㉿kali)-[~]
+└─# vim fruits.txt
+ 
+┌──(root㉿kali)-[~]
+└─# cat fruits.txt 
+abcddasdnandasndad
+asdadasda
+w
+ 
+------------------
+aNSWER 6)
+──(root㉿kali)-[~]
+└─# vim devops.txt
+ 
+--file created above and save using wq!
+--first three line to be printed
+Answer 7)
+┌──(root㉿kali)-[~]
+└─# head -3 devops.txt
+Apple
+mango
+banana
+-------------------------------
+Answer 8)
+---last three content of file
+┌──(root㉿kali)-[~]
+└─# tail -3 devops.txt
+kiwi
+orange
+guava
+------------------
+Answer 9)and 10)
+┌──(root㉿kali)-[~]
+└─# vim colors.txt
+ --added content and created too 
+ --to show content used cat cmd
+┌──(root㉿kali)-[~]
+└─# cat colors.txt
+red
+pink
+white
+black
+blue
+orange
+purple
+grey
+---------------------
+Answer 11)
+┌──(root㉿kali)-[~]
+└─# diff fruits.txt colors.txt
+1,3c1,9
+< abcddasdnandasndad
+< asdadasda
+< w
+---
+> red
+> pink
+> white
+> black
+> blue
+> orange
+> purple
+> grey
+> 
