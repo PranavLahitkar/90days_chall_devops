@@ -1,0 +1,77 @@
+Day 4 Task: Basic Linux Shell Scripting for DevOps Engineers.
+What is Kernel
+The kernel is a computer program that is the core of a computer’s operating system, with complete control over everything in the system.
+What is Shell
+A shell is special user program which provide an interface to user to use operating system services. Shell accept human readable commands
+from user and convert them into something which kernel can understand. It is a command language interpreter that execute commands read from
+input devices such as keyboards or from files. The shell gets started when the user logs in or start the terminal.
+What is Linux Shell Scripting?
+A shell script is a computer program designed to be run by a linux shell, a command-line interpreter. The various dialects of shell scripts
+are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Tasks
+Explain in your own words and examples, what is Shell Scripting for DevOps.
+What is #!/bin/bash? can we write #!/bin/sh as well?
+Write a Shell Script which prints I will complete #90DaysOofDevOps challenge
+Write a Shell Script to take user input, input from arguments and print the variables.
+Write an Example of If else in Shell Scripting by comparing 2 numbers
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Answer 1)=>A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. The various dialects of 
+shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program
+execution, and printing text.Shell scripting alo can be used to atutomate repeated tasks related to systems and servers
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Answer 2)=>bash and sh are two different shells of the Unix operating system. bash is sh, but with more features and better syntax.
+Bash is “Bourne Again SHell”, and is an improvement of the sh (original Bourne shell). Shell scripting is scripting in any shell, 
+whereas Bash scripting is scripting specifically for Bash. sh is a shell command-line interpreter of Unix/Unix-like operating systems.
+sh provides some built-in commands. bash is a superset of sh. Shell is a command-line interface to run commands and shell scripts. 
+Shells come in a variety of flavors, much as operating systems come in a variety of flavors. So, Shell is an interface between the 
+user and the operating system, which helps the user to interact with the device.
+sh:
+#!/bin/sh
+bash:
+#!/bin/bash
+bash:
+bash is also a command programming language like sh. Nowadays, bash is a default login shell on most Linux-based operating systems.
+It is an extended version of the sh system for GNU replacement for the Bourne shell. We can also say bash is a programming language. 
+Here think like python, we can start python in interactive mode and it behaves like a shell but we can also run python program on any IDE.
+
+sh:
+sh is also called Bourne Shell. sh is a command programming language described by POSIX standard. It is for UNIX or UNIX-like operating 
+systems. It has many implementations. On most operating systems, sh is implemented by programs like dash, kash, and original Bourne Shell. 
+sh is a Predecessor of bash. /bin/sh is an actual link to main implementations. It is a symlink in most POSIX systems.
+
+according to this doc, we can write #!bin/sh but it is recommended to use bash as bash is superset of sh
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Answer 3)=>A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages.
+
+#!bin/bash
+echo"I will complete #90DaysOofDevOps challenge "
+for output use cmd ./filename.sh
+
+Answer 4)=>#!/bin/bash
+# Take user input
+echo "Enter a value:"
+read user_input
+# Access command-line arguments
+arg1=$1
+arg2=$2
+# Print variables
+echo "User input: $user_input"
+echo "Argument 1: $arg1"
+echo "Argument 2: $arg2"
+
+make it executable :: chmod +x filename.sh
+for output cmd ===./filename.sh argument1 argument2
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Answer 5)=> #!/bin/bash 
+# Assign values to variables 
+num1=10 num2=20
+ # Compare the numbers 
+if [ $num1 -eq $num2 ]; 
+then echo "$num1 is equal to $num2"
+ elif [ $num1 -lt $num2 ]; 
+then echo "$num1 is less than $num2"
+ else echo "$num1 is greater than $num2" 
+fi
