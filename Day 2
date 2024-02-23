@@ -3,3 +3,80 @@ Task: What is the linux command to
 Check your present working directory.
 List all the files or directories including hidden files.
 Create a nested directory A/B/C/D/E.
+----------------------------------------------------------------------------
+1)=>Basic linux commands
+Listing commands
+ls option_flag arguments --> list the sub directories and files avaiable in the present directory
+Examples:
+ls -l--> list the files and directories in long list format with extra information
+ls -a --> list all including hidden files and directory
+ls *.sh --> list all the files having .sh extension.
+ls -i --> list the files and directories with index numbers inodes
+ls -d */ --> list only directories.(we can also specify a pattern)
+Directoy commands
+pwd --> print work directory. Gives the present working directory.
+cd path_to_directory --> change directory to the provided path
+cd ~ or just cd --> change directory to the home directory
+cd - --> Go to the last working directory.
+cd .. --> change directory to one step back.
+cd ../.. --> Change directory to 2 levels back.
+mkdir directoryName --> to make a directory in a specific location
+----------------------------------------------------------------------------
+2)=>Check your present working directory.
+command used pwd (i.e Present working directory)
+
+┌──(kali㉿kali)-[~]
+└─$ pwd
+/home/kali
+ 
+┌──(kali㉿kali)-[~]
+└─$ 
+
+----------------------------------------------------------------------------
+
+3)=>List all the files or directories including hidden files.
+ command used ls -all 
+┌──(kali㉿kali)-[~]
+└─$ ls -all
+total 132
+drwx------ 15 kali kali 4096 Feb 20 00:23 .
+drwxr-xr-x 3 root root 4096 Nov 30 11:56 ..
+-rw-r--r-- 1 kali kali 220 Nov 30 11:56 .bash_logout
+-rw-r--r-- 1 kali kali 5551 Nov 30 11:56 .bashrc
+-rw-r--r-- 1 kali kali 3526 Nov 30 11:56 .bashrc.original
+drwxr-xr-x 7 kali kali 4096 Feb 20 00:22 .cache 
+drwxr-xr-x 12 kali kali 4096 Feb 19 21:52 .config 
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Desktop 
+-rw-r--r-- 1 kali kali 35 Feb 19 21:52 .dmrc
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Documents 
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Downloads 
+-rw-r--r-- 1 kali kali 11759 Nov 30 11:56 .face
+lrwxrwxrwx 1 kali kali 5 Nov 30 11:56 .face.icon -> .face 
+drwx------ 3 kali kali 4096 Feb 19 21:52 .gnupg 
+-rw------- 1 kali kali 0 Feb 19 21:52 .ICEauthority
+drwxr-xr-x 3 kali kali 4096 Nov 30 11:56 .java 
+drwxr-xr-x 4 kali kali 4096 Feb 19 21:52 .local 
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Music 
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Pictures 
+-rw-r--r-- 1 kali kali 807 Nov 30 11:56 .profile
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Public 
+-rw-r--r-- 1 kali kali 0 Feb 19 21:54 .sudo_as_admin_successful
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Templates 
+drwxr-xr-x 2 kali kali 4096 Feb 19 21:52 Videos 
+-rw------- 1 kali kali 49 Feb 20 00:22 .Xauthority
+-rw------- 1 kali kali 4465 Feb 20 00:22 .xsession-errors
+-rw------- 1 kali kali 4517 Feb 19 21:52 .xsession-errors.old 
+-rw------- 1 kali kali 84 Feb 19 21:55 .zsh_history
+-rw-r--r-- 1 kali kali 10868 Nov 30 11:56 .zshrc
+----------------------------------------------------------------------------
+4)=>Create a nested directory A/B/C/D/E
+mkdir -p A/B/C/D/E
+output:
+┌──(kali㉿kali)-[~]
+└─$ tree A 
+A
+└── B
+ └── C
+ └── D
+ └── E
+5 directories, 0 files
