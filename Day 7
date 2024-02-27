@@ -1,0 +1,86 @@
+Day 7 Task: Understanding package manager and systemctl
+1)What is a package manager in Linux?
+=>In simpler words, a package manager is a tool that allows users to install, remove, upgrade, configure and manage software packages on an operating system. The package manager can be a graphical application like a software center or a command line tool like apt-get or pacman.
+2)What is a package?
+=>A package is usually referred to an application but it could be a GUI application, command line tool or a software library (required by other software programs). A package is essentially an archive file containing the binary executable, configuration file and sometimes information about the dependencies.
+3)Different kinds of package managers
+=>Package Managers differ based on packaging system but same packaging system may have more than one package manager.For example, RPM has Yum and DNF package managers. For DEB, you have apt-get, aptitude command line based package managers.
+
+Tasks
+You have to install docker and jenkins in your system from your terminal using package managers
+Write a small blog or article to install these tools using package managers on Ubuntu and CentOS
+
+To RUN Jenkins there are some prerequisites to be isntalled
+i.e. Java Jdk ,jenkins, and systemctl
+add these dependencies using
+sudo yum install java-11-openjdk 
+sudo yum install jenkins 
+sudo systemctl daemon-reload
+
+
+after that follow these step in these step used apt package manager
+Jenkins Debian Packages
+This is the Debian package repository of Jenkins to automate installation and upgrade. To use this repository, first add the key to your system (for the Weekly Release Line):
+ sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian/jenkins.io-2023.key 
+Then add a Jenkins apt repository entry:
+ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null 
+
+Update your local package index, then finally install Jenkins:
+ sudo apt-get update
+  sudo apt-get install fontconfig openjdk-17-jre
+  sudo apt-get install jenkins 
+
+The apt packages were signed using this key:
+pub   rsa4096 2023-03-27 [SC] [expires: 2026-03-26]
+      63667EE74BBA1F0A08A698725BA31D57EF5975CA
+uid                      Jenkins Project 
+sub   rsa4096 2023-03-27 [E] [expires: 2026-03-26]
+Docker::
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
+Distro maintainers provide unofficial distributions of Docker packages in their repositories. You must uninstall these packages before you can install the official version of Docker Engine.
+The unofficial packages to uninstall are:
+docker.io
+docker-compose
+docker-doc
+podman-docker
+Moreover, Docker Engine depends on containerd and runc. Docker Engine bundles these dependencies as one bundle: containerd.io. If you have installed the containerd or runc previously, uninstall them to avoid conflicts with the versions bundled with Docker Engine.
+Run the following command to uninstall all conflicting packages:
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+
+Installation methods
+You can install Docker Engine in different ways, depending on your needs:
+Docker Engine comes bundled with Docker Desktop for Linux. This is the easiest and quickest way to get started.
+Set up and install Docker Engine from Docker's apt repository.
+Install it manually and manage upgrades manually.
+Use a convenience script. Only recommended for testing and development environments.
+Install using the apt repository
+Before you install Docker Engine for the first time on a new host machine, you need to set up the Docker apt repository. Afterward, you can install and update Docker from the repository.
+Set up Docker's apt repository.
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+# Add the repository to Apt sources:
+echo \
+ "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+Install the Docker packages.
+Latest Specific version
+To install the latest version, run:
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+Verify that the installation is successful by running the hello-world image:
+//here we are just testing the installation
+This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
+sudo docker run hello-world
+
+You have now successfully installed and started Docker Engine.
