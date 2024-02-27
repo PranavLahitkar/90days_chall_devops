@@ -1,0 +1,110 @@
+Day 5::=>
+Tasks::
+You have to do the same using Shell Script i.e using either Loops or command with start day and end day variables using arguments -So Write a bash script create directories.sh that when the script is executed with three given arguments (one is the directory name and second is start number of directories and third is the end number of directories ) it creates a specified number of directories with a dynamic directory name.
+Create a Script to backup all your work done till now.
+Backups are an important part of DevOps Engineer's day to Day activities The video in References will help you to understand How a DevOps Engineer takes backups (it can feel a bit difficult but keep trying, Nothing is impossible.)
+Read About Cron and Crontab, to automate the backup Script
+Read about User Management and Let me know on Linkedin if you're ready for Day 6.Cron is the system's main scheduler for running jobs or tasks unattended. A command called crontab allows the user to submit, edit or delete entries to cron. A crontab file is a user file that holds the scheduling information.
+A user is an entity, in a Linux operating system, that can manipulate files and perform several other operations. Each user is assigned an ID that is unique for each user in the operating system. In this post, we will learn about users and commands which are used to get information about the users. After installation of the operating system, the ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local user begins from 1000 onwards.
+
+Answer 1)=>
+#!/bin/bash
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 3 ]; then
+echo "Usage: $0 <directory_name> <start_number> end_number>"
+exit 1
+fi
+# Extract arguments
+directory_name="$1"
+start_number="$2"
+end_number="$3"
+# Loop through the specified range and create directories
+for ((i=start_number; i<=end_number; i++)); 
+do
+padded_number=$(printf "%02d" $i)
+mkdir -p "${directory_name}${padded_number}"
+done
+echo "Directories created successfully."
+Answer 2)=>
+#!/bin/bash
+# Define backup directory
+backup_dir="/path/to/backup/directory"
+# Create backup directory if it doesn't exist
+mkdir -p "$backup_dir"
+# Create a timestamp for the backup file
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+# Create a tar archive of the current directory
+tar -czf "$backup_dir/work_backup_$timestamp.tar.gz" .
+echo "Backup created successfully in $backup_dir.
+Answer 3)=>
+Read About Cron and Crontab, to automate the backup Script
+Cron is the system's main scheduler for running jobs or tasks unattended. A command called crontab allows the user to submit, edit or delete entries to cron. A crontab file is a user file that holds the scheduling information.
+The cron command-line utility is a job scheduler on Unix-like operating systems. Users who set up and maintain software environments use cron to schedule jobs, also known as cron jobs, to run periodically at fixed times, dates, or intervals
+Crontabs are the configuration files used by Cron to run services. Crontabs hold the configurations for which service to run and when it should run. Services are nothing more than an execution path to a script or application with possible additional commands.
+
+Answer 4)=>
+
+A user is an entity, in a Linux operating system, that can manipulate files and perform several other operations. Each user is assigned an ID that is unique for each user in the operating system. In this post, we will learn about users and commands which are used to get information about the users. After installation of the operating system, the ID 0 is assigned to the root user and the IDs 1 to 999 (both inclusive) are assigned to the system users and hence the ids for local user begins from 1000 onwards.
+Answer 5)=>
+┌──(root㉿kali)-[/]
+└─# cat /etc/shadow | awk -F : '{print $1}'
+
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+_apt
+nobody
+systemd-network
+systemd-timesync
+messagebus
+tss
+strongswan
+tcpdump
+usbmux
+sshd
+dnsmasq
+avahi
+speech-dispatcher
+pulse
+lightdm
+saned
+polkitd
+rtkit
+colord
+nm-openvpn
+nm-openconnect
+_galera
+mysql
+stunnel4
+_rpc
+geoclue
+Debian-snmp
+sslh
+ntpsec
+redsocks
+rwhod
+_gophish
+iodine
+miredo
+statd
+redis
+postgres
+mosquitto
+inetsim
+_gvm
+kali
+pranav
+vishnuji
